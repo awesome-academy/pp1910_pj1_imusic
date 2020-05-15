@@ -14,5 +14,33 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('web.index');
 });
+
+Route::get('/admin', function () {
+    return view('admin.index');
+});
+
+Route::get('/home', function () {
+    return view('web.index');
+});
+
+Route::get('/login', function () {
+    return view('auth.login');
+});
+Route::get('/register', function () {
+    return view('auth.register');
+});
+Route::get('/songnew', function () {
+    return view('web.songnew.show');
+});
+route::get('/upload',function (){
+    return view('web.upload');
+});
+
+route::get('/changepassword',function (){
+    return view('auth.changepassword');
+});
+route::post('/changepassword','Auth\ChangePasswordController@ChangePassword');
+
+Auth::routes();
